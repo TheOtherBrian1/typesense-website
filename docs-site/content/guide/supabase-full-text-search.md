@@ -237,11 +237,8 @@ When the query completes, you can use the returned _request_id_ to find the resp
 #### Viewing HTTP/HTTPS Response Message
 
 ```sql
-SELECT
-    *,
-    (response).body::JSON AS body
-FROM
-    net._http_collect_response(<request_id>);
+SELECT *
+FROM net._http_response;
 ```
 
 > NOTE: At the end of STEP 5.2, we will discuss how this table can be used to retry failed syncs.
